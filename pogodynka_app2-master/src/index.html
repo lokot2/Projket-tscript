@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather Forecast App</title>
+  </head>
+
+  <body>
+    <video autoplay muted loop id="bgVideo" class="bg-video">
+      <source
+        src="https://cdn.videvo.net/videvo_files/video/free/2015-07/small_watermarked/Clouds_1_1_preview.webm"
+        type="video/mp4"
+      />
+    </video>
+    <div class="toast" id="errorToast">
+      <p>There is no city with this name, Check your spelling!</p>
+    </div>
+    <main>
+      <div class="main" id="main">
+        <div class="current">
+          <img src="" alt="" id="mainIcon" class="main-icon" />
+          <div class="main-temp">
+            <p id="mainTime"></p>
+            <div>
+              <p class="main-temp-current" id="mainTemp"></p>
+              <div>
+                <span class="main-temp-label">The weather feels like</span>
+                <p class="main-temp-time" id="mainTempFeels"></p>
+                <span class="main-temp-label">zimnooooo!</span>
+                <div class="main-wind">
+                  <span id="mainWindSpeed"></span>
+                  <img id="mainWindIcon" src="./assets/arrow.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-info">
+            <h1 class="main-info-city" id="mainCity"></h1>
+            <p class="main-info-weather" id="mainWeather"></p>
+          </div>
+        </div>
+        <ul class="forecast" id="forecast"></ul>
+      </div>
+    </main>
+    <aside>
+      <!-- <form class="inputWrapper" id="weatherForm">
+      <input id="cityInput" class="input" type="text" placeholder="Add new city" />
+      <button id="cityButton" class="button" type="submit" disabled="true"></button>
+    </form>
+    <ul id="cityList" class="city-list">
+    </ul> -->
+      <form class="inputWrapper" id="notesForm">
+        <input
+          id="noteTitle"
+          class="input"
+          type="text"
+          placeholder="Tytuł notatki"
+        />
+        <input
+          id="noteDescription"
+          class="input"
+          type="text"
+          placeholder="Dodaj opis"
+        />
+        <label>
+          <input type="checkbox" id="noteUp" />Dodaj na górze notaki
+        </label>
+
+        <select name="noteColor" id="noteColor">
+          <option value="red">czerwony</option>
+          <option value="yellow">żółty</option>
+          <option selected value="green">zielony</option>
+          <option value="blue">niebieski</option>
+        </select>
+        <!-- <textarea  form="notesForm" name="w3review" rows="4" cols="50"> -->
+        <button type="submit">Dodaj notakę</button>
+      </form>
+      <ul id="noteList" class="city-list"></ul>
+      <dialog id="myDialog">  <input
+        id="noteTitleUpdate"
+        class="input"
+        type="text"
+        placeholder="Tytuł notatki"
+      />
+      <input
+        id="noteDescriptionUpdate"
+        class="input"
+        type="text"
+        placeholder="Dodaj opis"
+      />
+      <button id="update">Atkualizuj</button>
+    </dialog>
+    </aside>
+
+    <script src="index.js"></script>
+  </body>
+</html>
